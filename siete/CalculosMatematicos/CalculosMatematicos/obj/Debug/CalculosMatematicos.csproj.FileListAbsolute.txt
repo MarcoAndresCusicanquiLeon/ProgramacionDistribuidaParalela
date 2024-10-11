@@ -1,6 +1,0 @@
-C:\Users\marco\source\repos\CalculosMatematicos\CalculosMatematicos\bin\Debug\CalculosMatematicos.dll
-C:\Users\marco\source\repos\CalculosMatematicos\CalculosMatematicos\bin\Debug\CalculosMatematicos.pdb
-C:\Users\marco\source\repos\CalculosMatematicos\CalculosMatematicos\obj\Debug\CalculosMatematicos.csproj.AssemblyReference.cache
-C:\Users\marco\source\repos\CalculosMatematicos\CalculosMatematicos\obj\Debug\CalculosMatematicos.csproj.CoreCompileInputs.cache
-C:\Users\marco\source\repos\CalculosMatematicos\CalculosMatematicos\obj\Debug\CalculosMatematicos.dll
-C:\Users\marco\source\repos\CalculosMatematicos\CalculosMatematicos\obj\Debug\CalculosMatematicos.pdb
