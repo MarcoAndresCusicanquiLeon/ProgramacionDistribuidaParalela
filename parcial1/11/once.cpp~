@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <vector>
+#include "mpi.h"
+using namespace std;
+
+int main(int argc, char** argv){
+	MPI_Init(&argc, &argv);
+	int num_tasks;
+	MPI_Comm_size(MPI_COMM_WORLD, &num_tasks);
+	int task_id;
+	MPI_Comm_rank(MPI_COMM_WORLD, &task_id);
+
+	int st,en;
+	vector<int> partans;
+
+	if (task_id==0){
+		int n;
+		printf("Ingrese el numero de terminos n = "); scanf("%d",&n);
+		int ans[n];
+		// el numero de vectores (M) se especifica al momento de la ejecucion
+
+		int divi=n/num_tasks;
+		int md=n%num_tasks;
+		
+		// for the other processes:
+		st=divi;
+		for (int i=1; i<num_tasks; i++){
+			en=st+divi;
+			if (i<=md) en++;
+			MPI_Send(&st,1,MPI_INT,i,3312,MPI_COMM_WORLD);
+			MPI_Send(&en,1,MPI_INT,i,3312,MPI_COMM_WORLD);
+			st=en;
+		}
+		// for the 0th process:
+		for (int i=0; i<divi; i++){
+			ans[i]=(i+1)*2;
+		}
+		// retrieving partial answers:
+		st=divi;
+		for (int i=1; i<num_tasks; i++){
+			en=st+divi;
+			if (i<=md) en++;
+			for (int j=st; j<en; j++) MPI_Recv(&ans[j],1,MPI_INT,i,3312,MPI_COMM_WORLD,MPI_STATUS_IGNORE);
+			st=en;
+		}
+		printf("La serie de %d terminos es:\n", n);
+		for (int i=0; i<n; i++) printf("%d ", ans[i]);
+		printf("\n");
+	}else{
+		MPI_Recv(&st,1,MPI_INT,0,3312,MPI_COMM_WORLD,MPI_STATUS_IGNORE);
+		MPI_Recv(&en,1,MPI_INT,0,3312,MPI_COMM_WORLD,MPI_STATUS_IGNORE);
+		partans.resize(en-st);
+		for (int i=st; i<en; i++) partans[i-st]=(i+1)*2;
+		// send partial answer:
+		for (int i=0; i<(int)partans.size(); i++) MPI_Send(&partans[i],1,MPI_INT,0,3312,MPI_COMM_WORLD);
+	}
+
+	MPI_Finalize();
+	return 0;
+}

@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+
+// se utiliza la formula area del circulo unitario:
+// 2 * integral[-1,1] (sqrt(1-x^2)) dx
+// se separa el rango [-1,1] en al menos 10^7 partes
+
+const int npartes=10000000;
+
+/* double f(double x){ */
+/* 	return sqrt((double)1-x*x); */
+/* } */
+
+int main(){
+	double PI=0.0;
+	double DX=(double)2/npartes;
+	// iterativo:
+	double x=-1.0;
+	for (int i=0; i<npartes; i++, x+=DX){
+		//PI+=f(x)*DX;
+		PI+=sqrt((double)1-x*x)*DX;
+	}
+
+	printf("Calculo de PI Iterativo: %lf\n", PI);
+
+	// recursivo:
+	
+
+	return 0;
+}
