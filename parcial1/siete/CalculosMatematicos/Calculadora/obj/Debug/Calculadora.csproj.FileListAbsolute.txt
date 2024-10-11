@@ -1,0 +1,10 @@
+C:\Users\marco\source\repos\CalculosMatematicos\Calculadora\bin\Debug\Calculadora.exe.config
+C:\Users\marco\source\repos\CalculosMatematicos\Calculadora\bin\Debug\Calculadora.exe
+C:\Users\marco\source\repos\CalculosMatematicos\Calculadora\bin\Debug\Calculadora.pdb
+C:\Users\marco\source\repos\CalculosMatematicos\Calculadora\bin\Debug\CalculosMatematicos.dll
+C:\Users\marco\source\repos\CalculosMatematicos\Calculadora\bin\Debug\CalculosMatematicos.pdb
+C:\Users\marco\source\repos\CalculosMatematicos\Calculadora\obj\Debug\Calculadora.csproj.AssemblyReference.cache
+C:\Users\marco\source\repos\CalculosMatematicos\Calculadora\obj\Debug\Calculadora.csproj.CoreCompileInputs.cache
+C:\Users\marco\source\repos\CalculosMatematicos\Calculadora\obj\Debug\Calculad.310BED7B.Up2Date
+C:\Users\marco\source\repos\CalculosMatematicos\Calculadora\obj\Debug\Calculadora.exe
+C:\Users\marco\source\repos\CalculosMatematicos\Calculadora\obj\Debug\Calculadora.pdb
